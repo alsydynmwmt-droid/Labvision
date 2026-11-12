@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LabVision | Medical Laboratory Encyclopedia</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f3f7fc;color:#20344d}
+header{background:#10243e;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:25px;font-weight:bold}
+.logo span{color:#00d6c2}
+button{cursor:pointer;border:0;border-radius:10px;padding:12px 18px;font-weight:bold}
+.lang{background:#00d6c2;color:#10243e}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+.hero{text-align:center;padding:65px 15px;background:linear-gradient(135deg,#10243e,#176bff);color:white}
+.hero h1{font-size:35px}
+.hero p{line-height:1.8;color:#e0ebff}
+.search{max-width:650px;margin:25px auto;display:flex;background:white;padding:6px;border-radius:14px}
+.search input{flex:1;min-width:0;padding:14px;border:0;outline:0;font-size:16px}
+.search button{background:#00d6c2;color:#10243e}
+section{padding:45px 6%}
+.heading{text-align:center;margin-bottom:28px}
+.heading h2{color:#176bff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:white;padding:22px;border-radius:16px;border:1px solid #e5edf7;box-shadow:0 5px 20px #10243e08}
+.card h3{color:#176bff}
+.card p{line-height:1.8;color:#61738a}
+.tag{font-size:12px;background:#e9f3ff;color:#176bff;padding:6px 10px;border-radius:20px}
+.info{background:#e8f8f6;padding:20px;border-radius:12px;line-height:1.9;border-inline-start:4px solid #00bfae}
+.dark{background:#10243e;color:white}
+.dark h2{color:white}
+.dark .card{color:#20344d}
+footer{text-align:center;background:#09172a;color:#bdcce0;padding:28px;line-height:2}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Lab<span>Vision</span> 🧬</div>
+<nav>
+<a href="#tests" data-ar="التحاليل" data-en="Tests">التحاليل</a>
+<a href="#prep" data-ar="التحضير" data-en="Preparation">التحضير</a>
+<a href="#cells" data-ar="أطلس الخلايا" data-en="Cell Atlas">أطلس الخلايا</a>
+<a href="#about" data-ar="عن الموقع" data-en="About">عن الموقع</a>
+</nav>
+<button class="lang" onclick="toggleLanguage()">English</button>
+</header>
+
+<div class="hero">
+<h1 data-ar="اكتشف عالم التحاليل الطبية" data-en="Explore the World of Medical Laboratory Tests">اكتشف عالم التحاليل الطبية</h1>
+<p data-ar="موسوعة طبية تعليمية لفهم التحاليل المخبرية والاستعداد لها"
+data-en="An educational encyclopedia to understand laboratory tests and prepare for them">
+موسوعة طبية تعليمية لفهم التحاليل المخبرية والاستعداد لها
+</p>
+
+<div class="search">
+<input id="search" placeholder="ابحث عن تحليل..." data-placeholder-ar="ابحث عن تحليل..." data-placeholder-en="Search for a test...">
+<button onclick="searchTests()" data-ar="بحث" data-en="Search">بحث</button>
+</div>
+</div>
+
+<section id="tests">
+<div class="heading">
+<h2 data-ar="🧪 موسوعة التحاليل الطبية" data-en="🧪 Medical Tests Encyclopedia">🧪 موسوعة التحاليل الطبية</h2>
+<p data-ar="تعرف على أشهر التحاليل المخبرية" data-en="Learn about common laboratory tests">تعرف على أشهر التحاليل المخبرية</p>
+</div>
+
+<div class="cards" id="testCards">
+
+<div class="card" data-search="cbc complete blood count صورة الدم">
+<span class="tag">Hematology</span>
+<h3>CBC - Complete Blood Count</h3>
+<p data-ar="صورة الدم الكاملة: تقيس خلايا الدم الحمراء والبيضاء والصفائح الدموية."
+data-en="Measures red blood cells, white blood cells, and platelets.">
+صورة الدم الكاملة: تقيس خلايا الدم الحمراء والبيضاء والصفائح الدموية.
+</p>
+<p data-ar="العينة: دم كامل EDTA" data-en="Sample: EDTA whole blood">العينة: دم كامل EDTA</p>
+<p data-ar="الصيام: لا يحتاج عادةً" data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
+</div>
+
+<div class="card" data-search="fbs glucose fasting sugar سكر">
+<span class="tag">Biochemistry</span>
+<h3>FBS - Fasting Blood Sugar</h3>
+<p data-ar="قياس مستوى الجلوكوز في الدم بعد الصيام."
+data-en="Measures blood glucose after fasting.">قياس مستوى الجلوكوز في الدم بعد الصيام.</p>
+<p data-ar="العينة: دم" data-en="Sample: Blood">العينة: دم</p>
+<p data-ar="الصيام: غالبًا 8 ساعات حسب تعليمات المختبر"
+data-en="Fasting: Usually 8 hours, according to lab instructions">
+الصيام: غالبًا 8 ساعات حسب تعليمات المختبر</p>
+</div>
+
+<div class="card" data-search="hba1c glycated hemoglobin السكر التراكمي">
+<span class="tag">Biochemistry</span>
+<h3>HbA1c - Glycated Hemoglobin</h3>
+<p data-ar="يعكس متوسط مستوى السكر خلال نحو 2–3 أشهر."
+data-en="Reflects average blood glucose over approximately 2–3 months.">
+يعكس متوسط مستوى السكر خلال نحو 2–3 أشهر.</p>
+<p data-ar="العينة: دم كامل" data-en="Sample: Whole blood">العينة: دم كامل</p>
+<p data-ar="الصيام: لا يحتاج عادةً" data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
+</div>
+
+<div class="card" data-search="tsh thyroid الغدة الدرقية">
+<span class="tag">Hormones</span>
+<h3>TSH - Thyroid Stimulating Hormone</h3>
+<p data-ar="يساعد في تقييم وظيفة الغدة الدرقية."
+data-en="Helps evaluate thyroid function.">يساعد في تقييم وظيفة الغدة الدرقية.</p>
+<p data-ar="العينة: Serum" data-en="Sample: Serum">العينة: Serum</p>
+<p data-ar="الصيام: ليس مطلوبًا عادةً"
+data-en="Fasting: Usually not required">الصيام: ليس مطلوبًا عادةً</p>
+</div>
+
+<div class="card" data-search="lipid profile cholesterol الدهون">
+<span class="tag">Biochemistry</span>
+<h3>Lipid Profile</h3>
+<p data-ar="يقيس الكوليسترول والدهون الثلاثية ومؤشرات الدهون الأخرى."
+data-en="Measures cholesterol, triglycerides, and other lipid markers.">
+يقيس الكوليسترول والدهون الثلاثية ومؤشرات الدهون الأخرى.</p>
+<p data-ar="العينة: Serum" data-en="Sample: Serum">العينة: Serum</p>
+<p data-ar="الصيام: قد يُطلب حسب الفحص"
+data-en="Fasting: May be required depending on the test">
+الصيام: قد يُطلب حسب الفحص</p>
+</div>
+
+<div class="card" data-search="urinalysis urine تحليل البول">
+<span class="tag">Urinalysis</span>
+<h3>Urinalysis - تحليل البول</h3>
+<p data-ar="فحص كيميائي ومجهري لعينة البول."
+data-en="Chemical and microscopic examination of urine.">
+فحص كيميائي ومجهري لعينة البول.</p>
+<p data-ar="العينة: بول منتصف المجرى"
+data-en="Sample: Midstream urine">العينة: بول منتصف المجرى</p>
+<p data-ar="الصيام: لا يحتاج عادةً"
+data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
+</div>
+
+</div>
+<p id="noResults" style="display:none;text-align:center" data-ar="لم يتم العثور على تحليل." data-en="No matching test found.">لم يتم العثور على تحليل.</p>
+</section>
+
+<section id="prep">
+<div class="heading">
+<h2 data-ar="📋 التحضير قبل التحليل" data-en="📋 Test Preparation">📋 التحضير قبل التحليل</h2>
+</div>
+<div class="cards">
+<div class="card">
+<h3 data-ar="⏱️ الصيام" data-en="⏱️ Fasting">⏱️ الصيام</h3>
+<p data-ar="مدة الصيام تختلف حسب التحليل. اتبع تعليمات المختبر."
+data-en="Fasting duration varies by test. Follow laboratory instructions.">
+مدة الصيام تختلف حسب التحليل. اتبع تعليمات المختبر.</p>
+</div>
+<div class="card">
+<h3 data-ar="💊 الأدوية" data-en="💊 Medications">💊 الأدوية</h3>
+<p data-ar="أخبر المختبر عن أدويتك. لا توقف أي دواء من نفسك."
+data-en="Inform the laboratory about your medications. Never stop medication on your own.">
+أخبر المختبر عن أدويتك. لا توقف أي دواء من نفسك.</p>
+</div>
+<div class="card">
+<h3 data-ar="🧴 جمع العينات" data-en="🧴 Sample Collection">🧴 جمع العينات</h3>
+<p data-ar="اتبع تعليمات المختبر لجمع العينة وحفظها."
+data-en="Follow laboratory instructions for sample collection and handling.">
+اتبع تعليمات المختبر لجمع العينة وحفظها.</p>
+</div>
+</div>
+</section>
+
+<section id="cells" class="dark">
+<div class="heading">
+<h2 data-ar="🔬 أطلس الخلايا" data-en="🔬 Cell Atlas">🔬 أطلس الخلايا</h2>
+</div>
+<div class="cards">
+<div class="card">
+<h3>🔴 RBC</h3>
+<p data-ar="خلايا الدم الحمراء: تنقل الأكسجين بواسطة الهيموغلوبين."
+data-en="Red blood cells transport oxygen using hemoglobin.">
+خلايا الدم الحمراء: تنقل الأكسجين بواسطة الهيموغلوبين.</p>
+</div>
+<div class="card">
+<h3>⚪ WBC</h3>
+<p data-ar="خلايا الدم البيضاء: جزء أساسي من جهاز المناعة."
+data-en="White blood cells are essential components of the immune system.">
+خلايا الدم البيضاء: جزء أساسي من جهاز المناعة.</p>
+</div>
+<div class="card">
+<h3>🟣 Platelets</h3>
+<p data-ar="الصفائح الدموية: تساعد في إيقاف النزيف."
+data-en="Platelets help stop bleeding.">الصفائح الدموية: تساعد في إيقاف النزيف.</p>
+</div>
+<div class="card">
+<h3>🧫 Blood Film</h3>
+<p data-ar="لطاخة الدم: فحص شكل خلايا الدم تحت المجهر."
+data-en="Blood film examines blood cell morphology under a microscope.">
+لطاخة الدم: فحص شكل خلايا الدم تحت المجهر.</p>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="heading">
+<h2 data-ar="🤖 مساعد LabVision" data-en="🤖 LabVision Assistant">🤖 مساعد LabVision</h2>
+</div>
+<div class="info">
+<p data-ar="المساعد الذكي سيكون جزءًا من التطوير القادم. هذه النسخة تقدم محتوى تعليميًا ثابتًا."
+data-en="The AI assistant will be added in a future development phase. This version provides educational static content.">
+المساعد الذكي سيكون جزءًا من التطوير القادم. هذه النسخة تقدم محتوى تعليميًا ثابتًا.</p>
+<p data-ar="تنبيه: المعلومات للتثقيف فقط ولا تُستخدم للتشخيص أو العلاج. راجع مختصًا مؤهلًا."
+data-en="Disclaimer: Educational information only, not for diagnosis or treatment. Consult a qualified professional.">
+تنبيه: المعلومات للتثقيف فقط ولا تُستخدم للتشخيص أو العلاج. راجع مختصًا مؤهلًا.</p>
+</div>
+</section>
+
+<footer>
+<div class="logo">Lab<span>Vision</span> 🧬</div>
+Medical Laboratory Tests Encyclopedia
+<br>© 2026 LabVision
+</footer>
+
+<script>
+let lang="ar";
+
+function toggleLanguage(){
+lang=lang==="ar"?"en":"ar";
+document.documentElement.lang=lang;
+document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+
+document.querySelectorAll("[data-ar]").forEach(el=>{
+el.textContent=el.dataset[lang];
+});
+
+document.querySelectorAll("[data-placeholder-ar]").forEach(el=>{
+el.placeholder=el.dataset["placeholder-"+lang];
+});
+
+document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
+document.getElementById("search").value="";
+searchTests();
+}
+
+function searchTests(){
+let q=document.getElementById("search").value.toLowerCase().trim();
+let cards=document.querySelectorAll("#testCards .card");
+let found=0;
+
+cards.forEach(card=>{
+let text=(card.innerText+" "+card.dataset.search).toLowerCase();
+let match=text.includes(q);
+card.style.display=match?"block":"none";
+if(match)found++;
+});
+
+document.getElementById("noResults").style.display=found?"none":"block";
+}
+
+document.getElementById("search").addEventListener("input",searchTests);
+</script>
+
+</body>
+</html>
