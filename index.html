@@ -4,37 +4,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LabVision | Medical Laboratory Encyclopedia</title>
+<title>LabVision | Medical Laboratory Platform</title>
 
 <style>
+:root{
+--navy:#10243e;
+--blue:#176bff;
+--teal:#00d6c2;
+--bg:#f3f7fc;
+--white:#fff;
+--text:#20344d;
+--muted:#64748b;
+--border:#e2eaf4;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f3f7fc;color:#20344d}
-header{background:#10243e;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-size:25px;font-weight:bold}
-.logo span{color:#00d6c2}
-button{cursor:pointer;border:0;border-radius:10px;padding:12px 18px;font-weight:bold}
-.lang{background:#00d6c2;color:#10243e}
+body{
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+header{
+background:var(--navy);
+color:white;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+.logo{font-size:26px;font-weight:bold}
+.logo span{color:var(--teal)}
 nav{display:flex;gap:15px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none}
-.hero{text-align:center;padding:65px 15px;background:linear-gradient(135deg,#10243e,#176bff);color:white}
-.hero h1{font-size:35px}
-.hero p{line-height:1.8;color:#e0ebff}
-.search{max-width:650px;margin:25px auto;display:flex;background:white;padding:6px;border-radius:14px}
-.search input{flex:1;min-width:0;padding:14px;border:0;outline:0;font-size:16px}
-.search button{background:#00d6c2;color:#10243e}
-section{padding:45px 6%}
-.heading{text-align:center;margin-bottom:28px}
-.heading h2{color:#176bff}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:white;padding:22px;border-radius:16px;border:1px solid #e5edf7;box-shadow:0 5px 20px #10243e08}
-.card h3{color:#176bff}
-.card p{line-height:1.8;color:#61738a}
-.tag{font-size:12px;background:#e9f3ff;color:#176bff;padding:6px 10px;border-radius:20px}
-.info{background:#e8f8f6;padding:20px;border-radius:12px;line-height:1.9;border-inline-start:4px solid #00bfae}
-.dark{background:#10243e;color:white}
+button{
+cursor:pointer;border:0;border-radius:10px;
+padding:12px 17px;font-weight:bold;
+}
+.lang{background:var(--teal);color:var(--navy)}
+.hero{
+background:linear-gradient(135deg,#10243e,#176bff);
+color:white;text-align:center;padding:60px 15px;
+}
+.hero h1{font-size:36px}
+.hero p{line-height:1.9}
+section{padding:40px 5%}
+.heading{text-align:center;margin-bottom:25px}
+.heading h2{color:var(--blue)}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px;
+}
+.card{
+background:white;padding:22px;border-radius:16px;
+border:1px solid var(--border);
+box-shadow:0 5px 18px #10243e08;
+}
+.card h3{color:var(--blue)}
+.card p{line-height:1.8;color:var(--muted)}
+.tag{
+display:inline-block;background:#e9f3ff;color:var(--blue);
+padding:6px 10px;border-radius:20px;font-size:12px;
+}
+.search{
+max-width:650px;margin:25px auto;
+display:flex;background:white;padding:6px;border-radius:14px;
+}
+.search input{
+flex:1;min-width:0;padding:14px;border:0;outline:0;
+font-size:16px;
+}
+.search button{background:var(--teal)}
+.primary{background:var(--blue);color:white}
+.secondary{background:#e9f3ff;color:var(--blue)}
+.green{background:var(--teal);color:var(--navy)}
+.dark{background:var(--navy);color:white}
 .dark h2{color:white}
-.dark .card{color:#20344d}
-footer{text-align:center;background:#09172a;color:#bdcce0;padding:28px;line-height:2}
+.info{
+background:#e8f8f6;padding:20px;border-radius:12px;
+line-height:1.9;border-inline-start:4px solid var(--teal);
+}
+.hidden{display:none!important}
+.tube{
+display:inline-block;width:30px;height:90px;
+border-radius:7px 7px 12px 12px;
+margin:8px;border:2px solid #ffffff80;
+box-shadow:0 4px 10px #0002;
+}
+.tube-purple{background:#9b59b6}
+.tube-blue{background:#3498db}
+.tube-green{background:#27ae60}
+.tube-red{background:#e74c3c}
+.tube-yellow{background:#f1c40f}
+.tube-gray{background:#95a5a6}
+.tube-black{background:#34495e}
+.tube-orange{background:#e67e22}
+input,select{
+padding:12px;border:1px solid var(--border);
+border-radius:10px;font-size:16px;
+}
+footer{
+background:#09172a;color:#bdcce0;
+text-align:center;padding:25px;line-height:2;
+}
+.video-box{
+background:#10243e;color:white;
+border-radius:14px;padding:25px;text-align:center;
+}
+.video-box a{color:#00d6c2}
+.result{padding:15px;background:#f0f7ff;border-radius:10px;margin-top:10px}
+.quiz-option{
+display:block;width:100%;text-align:right;
+margin:8px 0;background:#f1f5f9;
+}
+.quiz-option:hover{background:#e0edff}
+@media(max-width:600px){
+.hero h1{font-size:27px}
+header{justify-content:center}
+nav{justify-content:center}
+}
 </style>
 </head>
 
@@ -43,173 +133,159 @@ footer{text-align:center;background:#09172a;color:#bdcce0;padding:28px;line-heig
 <header>
 <div class="logo">Lab<span>Vision</span> 🧬</div>
 <nav>
-<a href="#tests" data-ar="التحاليل" data-en="Tests">التحاليل</a>
-<a href="#prep" data-ar="التحضير" data-en="Preparation">التحضير</a>
-<a href="#cells" data-ar="أطلس الخلايا" data-en="Cell Atlas">أطلس الخلايا</a>
-<a href="#about" data-ar="عن الموقع" data-en="About">عن الموقع</a>
+<a href="#home">الرئيسية</a>
+<a href="#tests">التحاليل</a>
+<a href="#tubes">الأنابيب</a>
+<a href="#academy">الأكاديمية</a>
+<a href="#cells">الخلايا</a>
 </nav>
 <button class="lang" onclick="toggleLanguage()">English</button>
 </header>
 
-<div class="hero">
-<h1 data-ar="اكتشف عالم التحاليل الطبية" data-en="Explore the World of Medical Laboratory Tests">اكتشف عالم التحاليل الطبية</h1>
-<p data-ar="موسوعة طبية تعليمية لفهم التحاليل المخبرية والاستعداد لها"
-data-en="An educational encyclopedia to understand laboratory tests and prepare for them">
-موسوعة طبية تعليمية لفهم التحاليل المخبرية والاستعداد لها
+<section class="hero" id="home">
+<h1 data-ar="اكتشف عالم التحاليل الطبية"
+data-en="Explore Medical Laboratory Science">
+اكتشف عالم التحاليل الطبية
+</h1>
+<p data-ar="منصة تعليمية للطلاب وتثقيفية للمرضى"
+data-en="An educational platform for students and patients">
+منصة تعليمية للطلاب وتثقيفية للمرضى
 </p>
+</section>
 
-<div class="search">
-<input id="search" placeholder="ابحث عن تحليل..." data-placeholder-ar="ابحث عن تحليل..." data-placeholder-en="Search for a test...">
-<button onclick="searchTests()" data-ar="بحث" data-en="Search">بحث</button>
+<section>
+<div class="heading">
+<h2>Welcome to LabVision</h2>
+<p>اختر القسم المناسب لك</p>
+</div>
+
+<div class="cards">
+<div class="card" style="text-align:center">
+<h2>🎓 Students</h2>
+<p>تعلم التحاليل، تدرب، اختبر معلوماتك.</p>
+<button class="primary" onclick="showMode('students')">دخول الطلاب</button>
+</div>
+<div class="card" style="text-align:center">
+<h2>🩺 Patients</h2>
+<p>افهم تحاليلك واستعد للفحص.</p>
+<button class="green" onclick="showMode('patients')">دخول المرضى</button>
 </div>
 </div>
+</section>
+
+<section id="students" class="hidden">
+<div class="heading">
+<h2>🎓 LabVision Students</h2>
+<p>منصة طلاب المختبرات الطبية</p>
+</div>
+<div class="cards">
+<div class="card"><h3>📚 Medical Tests</h3><p>موسوعة التحاليل الطبية.</p><button onclick="goTo('tests')">استكشف التحاليل</button></div>
+<div class="card"><h3>🧪 Smart Tube Selector</h3><p>اعرف الأنبوب المناسب لكل تحليل.</p><button onclick="goTo('tubes')">اختيار الأنابيب</button></div>
+<div class="card"><h3>🎬 AI Video Tutor</h3><p>شرح مرئي لكل تحليل.</p><button onclick="goTo('videos')">الفيديوهات</button></div>
+<div class="card"><h3>📝 Lab Academy</h3><p>اختبارات وأسئلة تعليمية.</p><button onclick="goTo('academy')">ابدأ الاختبار</button></div>
+</div>
+</section>
+
+<section id="patients" class="hidden">
+<div class="heading">
+<h2>🩺 LabVision Patients</h2>
+<p>معلومات مبسطة للمرضى</p>
+</div>
+<div class="cards">
+<div class="card"><h3>🔍 Understand Your Test</h3><p>افهم ماذا يقيس التحليل.</p><button onclick="goTo('tests')">ابحث عن تحليل</button></div>
+<div class="card"><h3>📋 Preparation Guide</h3><p>تعرف على تعليمات التحضير.</p><button onclick="goTo('prep')">دليل التحضير</button></div>
+<div class="card"><h3>🧴 Sample Collection</h3><p>إرشادات جمع العينات.</p><button onclick="goTo('prep')">تعرف على الطريقة</button></div>
+</div>
+</section>
 
 <section id="tests">
 <div class="heading">
-<h2 data-ar="🧪 موسوعة التحاليل الطبية" data-en="🧪 Medical Tests Encyclopedia">🧪 موسوعة التحاليل الطبية</h2>
-<p data-ar="تعرف على أشهر التحاليل المخبرية" data-en="Learn about common laboratory tests">تعرف على أشهر التحاليل المخبرية</p>
+<h2>🧪 Medical Tests Encyclopedia</h2>
+<p>موسوعة التحاليل الطبية</p>
 </div>
 
-<div class="cards" id="testCards">
-
-<div class="card" data-search="cbc complete blood count صورة الدم">
-<span class="tag">Hematology</span>
-<h3>CBC - Complete Blood Count</h3>
-<p data-ar="صورة الدم الكاملة: تقيس خلايا الدم الحمراء والبيضاء والصفائح الدموية."
-data-en="Measures red blood cells, white blood cells, and platelets.">
-صورة الدم الكاملة: تقيس خلايا الدم الحمراء والبيضاء والصفائح الدموية.
-</p>
-<p data-ar="العينة: دم كامل EDTA" data-en="Sample: EDTA whole blood">العينة: دم كامل EDTA</p>
-<p data-ar="الصيام: لا يحتاج عادةً" data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
+<div class="search">
+<input id="search" placeholder="ابحث باسم التحليل أو الاختصار..."
+oninput="searchTests()">
+<button onclick="searchTests()">بحث</button>
 </div>
 
-<div class="card" data-search="fbs glucose fasting sugar سكر">
-<span class="tag">Biochemistry</span>
-<h3>FBS - Fasting Blood Sugar</h3>
-<p data-ar="قياس مستوى الجلوكوز في الدم بعد الصيام."
-data-en="Measures blood glucose after fasting.">قياس مستوى الجلوكوز في الدم بعد الصيام.</p>
-<p data-ar="العينة: دم" data-en="Sample: Blood">العينة: دم</p>
-<p data-ar="الصيام: غالبًا 8 ساعات حسب تعليمات المختبر"
-data-en="Fasting: Usually 8 hours, according to lab instructions">
-الصيام: غالبًا 8 ساعات حسب تعليمات المختبر</p>
+<div class="cards" id="testCards"></div>
+<p id="noResults" class="hidden" style="text-align:center">لا توجد نتائج.</p>
+</section>
+
+<section id="tubes">
+<div class="heading">
+<h2>🧪 Smart Tube Selector</h2>
+<p>اختر التحليل أو لون الأنبوب</p>
 </div>
 
-<div class="card" data-search="hba1c glycated hemoglobin السكر التراكمي">
-<span class="tag">Biochemistry</span>
-<h3>HbA1c - Glycated Hemoglobin</h3>
-<p data-ar="يعكس متوسط مستوى السكر خلال نحو 2–3 أشهر."
-data-en="Reflects average blood glucose over approximately 2–3 months.">
-يعكس متوسط مستوى السكر خلال نحو 2–3 أشهر.</p>
-<p data-ar="العينة: دم كامل" data-en="Sample: Whole blood">العينة: دم كامل</p>
-<p data-ar="الصيام: لا يحتاج عادةً" data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
+<div class="card">
+<input id="tubeSearch" placeholder="مثلاً CBC أو PT أو Glucose">
+<button class="primary" onclick="findTube()">اعرض الأنبوب</button>
+
+<div style="margin-top:20px">
+<select id="tubeColor" onchange="filterTube()">
+<option value="">اختر لون الأنبوب</option>
+<option value="purple">Purple - EDTA</option>
+<option value="blue">Blue - Citrate</option>
+<option value="green">Green - Heparin</option>
+<option value="red">Red - Serum</option>
+<option value="yellow">Yellow - SST</option>
+<option value="gray">Gray - Fluoride</option>
+</select>
 </div>
 
-<div class="card" data-search="tsh thyroid الغدة الدرقية">
-<span class="tag">Hormones</span>
-<h3>TSH - Thyroid Stimulating Hormone</h3>
-<p data-ar="يساعد في تقييم وظيفة الغدة الدرقية."
-data-en="Helps evaluate thyroid function.">يساعد في تقييم وظيفة الغدة الدرقية.</p>
-<p data-ar="العينة: Serum" data-en="Sample: Serum">العينة: Serum</p>
-<p data-ar="الصيام: ليس مطلوبًا عادةً"
-data-en="Fasting: Usually not required">الصيام: ليس مطلوبًا عادةً</p>
+<div id="tubeResult" class="result">ستظهر المعلومات هنا.</div>
 </div>
+</section>
 
-<div class="card" data-search="lipid profile cholesterol الدهون">
-<span class="tag">Biochemistry</span>
-<h3>Lipid Profile</h3>
-<p data-ar="يقيس الكوليسترول والدهون الثلاثية ومؤشرات الدهون الأخرى."
-data-en="Measures cholesterol, triglycerides, and other lipid markers.">
-يقيس الكوليسترول والدهون الثلاثية ومؤشرات الدهون الأخرى.</p>
-<p data-ar="العينة: Serum" data-en="Sample: Serum">العينة: Serum</p>
-<p data-ar="الصيام: قد يُطلب حسب الفحص"
-data-en="Fasting: May be required depending on the test">
-الصيام: قد يُطلب حسب الفحص</p>
+<section id="videos">
+<div class="heading">
+<h2>🎬 AI Video Tutor</h2>
+<p>الفيديوهات التعليمية لكل تحليل</p>
 </div>
-
-<div class="card" data-search="urinalysis urine تحليل البول">
-<span class="tag">Urinalysis</span>
-<h3>Urinalysis - تحليل البول</h3>
-<p data-ar="فحص كيميائي ومجهري لعينة البول."
-data-en="Chemical and microscopic examination of urine.">
-فحص كيميائي ومجهري لعينة البول.</p>
-<p data-ar="العينة: بول منتصف المجرى"
-data-en="Sample: Midstream urine">العينة: بول منتصف المجرى</p>
-<p data-ar="الصيام: لا يحتاج عادةً"
-data-en="Fasting: Usually not required">الصيام: لا يحتاج عادةً</p>
-</div>
-
-</div>
-<p id="noResults" style="display:none;text-align:center" data-ar="لم يتم العثور على تحليل." data-en="No matching test found.">لم يتم العثور على تحليل.</p>
+<div class="cards" id="videoCards"></div>
 </section>
 
 <section id="prep">
-<div class="heading">
-<h2 data-ar="📋 التحضير قبل التحليل" data-en="📋 Test Preparation">📋 التحضير قبل التحليل</h2>
-</div>
+<div class="heading"><h2>📋 Test Preparation</h2></div>
 <div class="cards">
-<div class="card">
-<h3 data-ar="⏱️ الصيام" data-en="⏱️ Fasting">⏱️ الصيام</h3>
-<p data-ar="مدة الصيام تختلف حسب التحليل. اتبع تعليمات المختبر."
-data-en="Fasting duration varies by test. Follow laboratory instructions.">
-مدة الصيام تختلف حسب التحليل. اتبع تعليمات المختبر.</p>
-</div>
-<div class="card">
-<h3 data-ar="💊 الأدوية" data-en="💊 Medications">💊 الأدوية</h3>
-<p data-ar="أخبر المختبر عن أدويتك. لا توقف أي دواء من نفسك."
-data-en="Inform the laboratory about your medications. Never stop medication on your own.">
-أخبر المختبر عن أدويتك. لا توقف أي دواء من نفسك.</p>
-</div>
-<div class="card">
-<h3 data-ar="🧴 جمع العينات" data-en="🧴 Sample Collection">🧴 جمع العينات</h3>
-<p data-ar="اتبع تعليمات المختبر لجمع العينة وحفظها."
-data-en="Follow laboratory instructions for sample collection and handling.">
-اتبع تعليمات المختبر لجمع العينة وحفظها.</p>
-</div>
+<div class="card"><h3>⏱️ الصيام</h3><p>مدة الصيام تختلف حسب التحليل. اتبع تعليمات المختبر.</p></div>
+<div class="card"><h3>💊 الأدوية</h3><p>أخبر المختبر عن أدويتك ولا توقف أي دواء من نفسك.</p></div>
+<div class="card"><h3>🧴 جمع العينات</h3><p>اتبع تعليمات المختبر لجمع العينة وحفظها.</p></div>
+<div class="card"><h3>🩸 سحب الدم</h3><p>يجب أن يتم سحب الدم بواسطة مختص مؤهل.</p></div>
 </div>
 </section>
 
 <section id="cells" class="dark">
-<div class="heading">
-<h2 data-ar="🔬 أطلس الخلايا" data-en="🔬 Cell Atlas">🔬 أطلس الخلايا</h2>
-</div>
+<div class="heading"><h2>🔬 Cell Atlas</h2></div>
 <div class="cards">
-<div class="card">
-<h3>🔴 RBC</h3>
-<p data-ar="خلايا الدم الحمراء: تنقل الأكسجين بواسطة الهيموغلوبين."
-data-en="Red blood cells transport oxygen using hemoglobin.">
-خلايا الدم الحمراء: تنقل الأكسجين بواسطة الهيموغلوبين.</p>
+<div class="card"><h3>🔴 RBC</h3><p>خلايا الدم الحمراء تنقل الأكسجين بواسطة الهيموغلوبين.</p></div>
+<div class="card"><h3>⚪ WBC</h3><p>خلايا الدم البيضاء جزء أساسي من جهاز المناعة.</p></div>
+<div class="card"><h3>🟣 Platelets</h3><p>الصفائح الدموية تساعد في إيقاف النزيف.</p></div>
+<div class="card"><h3>🧫 Blood Film</h3><p>لطاخة الدم لفحص شكل خلايا الدم تحت المجهر.</p></div>
+</div>
+</section>
+
+<section id="academy">
+<div class="heading">
+<h2>🎓 LabVision Academy</h2>
+<p>اختبر معلوماتك المخبرية</p>
 </div>
 <div class="card">
-<h3>⚪ WBC</h3>
-<p data-ar="خلايا الدم البيضاء: جزء أساسي من جهاز المناعة."
-data-en="White blood cells are essential components of the immune system.">
-خلايا الدم البيضاء: جزء أساسي من جهاز المناعة.</p>
-</div>
-<div class="card">
-<h3>🟣 Platelets</h3>
-<p data-ar="الصفائح الدموية: تساعد في إيقاف النزيف."
-data-en="Platelets help stop bleeding.">الصفائح الدموية: تساعد في إيقاف النزيف.</p>
-</div>
-<div class="card">
-<h3>🧫 Blood Film</h3>
-<p data-ar="لطاخة الدم: فحص شكل خلايا الدم تحت المجهر."
-data-en="Blood film examines blood cell morphology under a microscope.">
-لطاخة الدم: فحص شكل خلايا الدم تحت المجهر.</p>
-</div>
+<h3 id="question">ما الأنبوب المناسب لفحص CBC؟</h3>
+<div id="options"></div>
+<div id="quizResult"></div>
+<button class="primary" onclick="nextQuestion()">السؤال التالي</button>
 </div>
 </section>
 
 <section id="about">
-<div class="heading">
-<h2 data-ar="🤖 مساعد LabVision" data-en="🤖 LabVision Assistant">🤖 مساعد LabVision</h2>
-</div>
+<div class="heading"><h2>🤖 LabVision Assistant</h2></div>
 <div class="info">
-<p data-ar="المساعد الذكي سيكون جزءًا من التطوير القادم. هذه النسخة تقدم محتوى تعليميًا ثابتًا."
-data-en="The AI assistant will be added in a future development phase. This version provides educational static content.">
-المساعد الذكي سيكون جزءًا من التطوير القادم. هذه النسخة تقدم محتوى تعليميًا ثابتًا.</p>
-<p data-ar="تنبيه: المعلومات للتثقيف فقط ولا تُستخدم للتشخيص أو العلاج. راجع مختصًا مؤهلًا."
-data-en="Disclaimer: Educational information only, not for diagnosis or treatment. Consult a qualified professional.">
-تنبيه: المعلومات للتثقيف فقط ولا تُستخدم للتشخيص أو العلاج. راجع مختصًا مؤهلًا.</p>
+<p>LabVision منصة تعليمية وتثقيفية للمختبرات الطبية.</p>
+<p>المعلومات للتثقيف فقط ولا تستخدم للتشخيص أو العلاج.</p>
 </div>
 </section>
 
@@ -222,41 +298,270 @@ Medical Laboratory Tests Encyclopedia
 <script>
 let lang="ar";
 
+const tests=[
+["CBC","Complete Blood Count","Hematology","صورة الدم الكاملة","EDTA","purple","لا يحتاج عادة للصيام"],
+["FBS","Fasting Blood Sugar","Biochemistry","سكر الدم الصائم","Fluoride","gray","عادة 8 ساعات حسب التعليمات"],
+["HbA1c","Glycated Hemoglobin","Biochemistry","السكر التراكمي","EDTA","purple","لا يحتاج عادة للصيام"],
+["TSH","Thyroid Stimulating Hormone","Hormones","هرمون الغدة الدرقية","Serum","red","لا يحتاج عادة للصيام"],
+["Lipid Profile","Lipid Profile","Biochemistry","دهون الدم","Serum","red","حسب تعليمات المختبر"],
+["Urinalysis","Urine Analysis","Urinalysis","تحليل البول","Urine","none","لا يحتاج عادة للصيام"],
+
+["ESR","Erythrocyte Sedimentation Rate","Hematology","سرعة ترسيب الدم","EDTA/حسب النظام","purple","لا يحتاج عادة"],
+["Reticulocytes","Reticulocyte Count","Hematology","الخلايا الشبكية","EDTA","purple","لا يحتاج عادة"],
+["Peripheral Smear","Peripheral Blood Smear","Hematology","لطاخة الدم المحيطية","EDTA","purple","لا يحتاج عادة"],
+["Blood Group","ABO and Rh","Hematology","فصيلة الدم","EDTA","purple","لا يحتاج عادة"],
+["PT","Prothrombin Time","Coagulation","زمن البروثرومبين","Citrate","blue","لا يحتاج عادة"],
+["INR","International Normalized Ratio","Coagulation","النسبة المعيارية الدولية","Citrate","blue","لا يحتاج عادة"],
+["aPTT","Activated Partial Thromboplastin Time","Coagulation","زمن الثرومبوبلاستين الجزئي","Citrate","blue","لا يحتاج عادة"],
+["D-Dimer","D-Dimer","Coagulation","دي دايمر","Citrate","blue","لا يحتاج عادة"],
+["Fibrinogen","Fibrinogen","Coagulation","الفيبرينوجين","Citrate","blue","لا يحتاج عادة"],
+
+["Urea","Blood Urea","Kidney","اليوريا","Serum","red","حسب المختبر"],
+["Creatinine","Creatinine","Kidney","الكرياتينين","Serum","red","حسب المختبر"],
+["Uric Acid","Uric Acid","Kidney","حمض اليوريك","Serum","red","حسب المختبر"],
+["eGFR","Estimated GFR","Kidney","معدل الترشيح الكبيبي","Calculated","none","لا يحتاج عادة"],
+["BUN","Blood Urea Nitrogen","Kidney","نيتروجين اليوريا","Serum","red","حسب المختبر"],
+
+["ALT","Alanine Aminotransferase","Liver","إنزيم ALT","Serum","red","حسب المختبر"],
+["AST","Aspartate Aminotransferase","Liver","إنزيم AST","Serum","red","حسب المختبر"],
+["ALP","Alkaline Phosphatase","Liver","الفوسفاتاز القلوي","Serum","red","حسب المختبر"],
+["GGT","Gamma Glutamyl Transferase","Liver","إنزيم GGT","Serum","red","حسب المختبر"],
+["Bilirubin Total","Total Bilirubin","Liver","البيليروبين الكلي","Serum","red","حسب المختبر"],
+["Direct Bilirubin","Direct Bilirubin","Liver","البيليروبين المباشر","Serum","red","حسب المختبر"],
+["Albumin","Albumin","Liver","الألبومين","Serum","red","حسب المختبر"],
+["Total Protein","Total Protein","Liver","البروتين الكلي","Serum","red","حسب المختبر"],
+
+["Sodium","Sodium","Electrolytes","الصوديوم","Serum","red","حسب المختبر"],
+["Potassium","Potassium","Electrolytes","البوتاسيوم","Serum","red","حسب المختبر"],
+["Chloride","Chloride","Electrolytes","الكلوريد","Serum","red","حسب المختبر"],
+["Calcium","Calcium","Electrolytes","الكالسيوم","Serum","red","حسب المختبر"],
+["Magnesium","Magnesium","Electrolytes","المغنيسيوم","Serum","red","حسب المختبر"],
+["Phosphorus","Phosphate","Electrolytes","الفوسفات","Serum","red","حسب المختبر"],
+
+["CRP","C-Reactive Protein","Immunology","البروتين المتفاعل C","Serum","red","حسب المختبر"],
+["RF","Rheumatoid Factor","Immunology","عامل الروماتويد","Serum","red","حسب المختبر"],
+["ANA","Antinuclear Antibody","Immunology","الأجسام المضادة للنواة","Serum","red","حسب المختبر"],
+["ASO","Antistreptolysin O","Serology","أجسام مضادة للمكورات العقدية","Serum","red","حسب المختبر"],
+["HBsAg","Hepatitis B Surface Antigen","Serology","مستضد التهاب الكبد B","Serum","red","حسب المختبر"],
+["Anti-HCV","Hepatitis C Antibody","Serology","أجسام مضادة لفيروس C","Serum","red","حسب المختبر"],
+["HIV Ag/Ab","HIV Antigen Antibody","Serology","فحص HIV","Serum","red","حسب المختبر"],
+["VDRL","VDRL","Serology","فحص الزهري","Serum","red","حسب المختبر"],
+
+["T3","Triiodothyronine","Hormones","هرمون T3","Serum","red","حسب المختبر"],
+["T4","Thyroxine","Hormones","هرمون T4","Serum","red","حسب المختبر"],
+["Free T4","Free Thyroxine","Hormones","الثيروكسين الحر","Serum","red","حسب المختبر"],
+["Prolactin","Prolactin","Hormones","البرولاكتين","Serum","red","حسب المختبر"],
+["Cortisol","Cortisol","Hormones","الكورتيزول","Serum","red","وقت محدد حسب الطبيب"],
+["Testosterone","Testosterone","Hormones","التستوستيرون","Serum","red","حسب المختبر"],
+["Estradiol","Estradiol","Hormones","الإستراديول","Serum","red","حسب المختبر"],
+["Progesterone","Progesterone","Hormones","البروجستيرون","Serum","red","حسب المختبر"],
+["FSH","Follicle Stimulating Hormone","Hormones","FSH","Serum","red","حسب المختبر"],
+["LH","Luteinizing Hormone","Hormones","LH","Serum","red","حسب المختبر"],
+["Beta-hCG","Beta Human Chorionic Gonadotropin","Hormones","هرمون الحمل","Serum","red","حسب المختبر"],
+
+["Troponin","Cardiac Troponin","Cardiac","تروبونين القلب","Serum/Plasma","red","حسب المختبر"],
+["CK","Creatine Kinase","Cardiac","إنزيم CK","Serum","red","حسب المختبر"],
+["CK-MB","Creatine Kinase MB","Cardiac","CK-MB","Serum","red","حسب المختبر"],
+["BNP","B-Type Natriuretic Peptide","Cardiac","BNP","EDTA/حسب النظام","purple","حسب المختبر"],
+
+["Amylase","Amylase","Pancreas","أميليز","Serum","red","حسب المختبر"],
+["Lipase","Lipase","Pancreas","ليباز","Serum","red","حسب المختبر"],
+["Iron","Serum Iron","Iron Studies","حديد الدم","Serum","red","حسب المختبر"],
+["Ferritin","Ferritin","Iron Studies","الفيريتين","Serum","red","حسب المختبر"],
+["TIBC","Total Iron Binding Capacity","Iron Studies","السعة الرابطة للحديد","Serum","red","حسب المختبر"],
+["Vitamin B12","Vitamin B12","Vitamins","فيتامين B12","Serum","red","حسب المختبر"],
+["Vitamin D","25-OH Vitamin D","Vitamins","فيتامين D","Serum","red","حسب المختبر"],
+["Folate","Folate","Vitamins","الفولات","Serum","red","حسب المختبر"],
+
+["Urine Culture","Urine Culture","Microbiology","زراعة البول","Sterile Urine","none","جمع عينة معقمة"],
+["Blood Culture","Blood Culture","Microbiology","زراعة الدم","Culture Bottles","none","قبل المضادات عند الإمكان"],
+["Stool Culture","Stool Culture","Microbiology","زراعة البراز","Stool","none","حاوية مناسبة"],
+["Sputum Culture","Sputum Culture","Microbiology","زراعة البلغم","Sputum","none","عينة بلغم مناسبة"],
+["Wound Culture","Wound Culture","Microbiology","زراعة الجروح","Swab/حسب النظام","none","حسب تعليمات المختبر"],
+
+["Urine Protein","Urine Protein","Urinalysis","بروتين البول","Urine","none","حسب المطلوب"],
+["Urine Albumin","Urine Albumin","Urinalysis","ألبومين البول","Urine","none","حسب المطلوب"],
+["Urine Creatinine","Urine Creatinine","Urinalysis","كرياتينين البول","Urine","none","حسب المطلوب"],
+["Urine Pregnancy","Urine hCG","Urinalysis","اختبار الحمل بالبول","Urine","none","حسب تعليمات الاختبار"],
+["Occult Blood","Fecal Occult Blood","Stool","الدم الخفي في البراز","Stool","none","حسب التعليمات"],
+["Stool Analysis","Stool Examination","Stool","تحليل البراز","Stool","none","عينة حديثة"],
+
+["Glucose Random","Random Blood Glucose","Biochemistry","سكر عشوائي","Serum/Plasma","red","لا يحتاج صيام"],
+["PPBS","Postprandial Blood Sugar","Biochemistry","سكر بعد الطعام","Serum/Plasma","red","بعد الطعام حسب التعليمات"],
+["OGTT","Oral Glucose Tolerance Test","Biochemistry","اختبار تحمل الجلوكوز","Fluoride","gray","بروتوكول خاص"],
+["LDL","Low Density Lipoprotein","Biochemistry","الكوليسترول الضار","Serum","red","حسب المختبر"],
+["HDL","High Density Lipoprotein","Biochemistry","الكوليسترول النافع","Serum","red","حسب المختبر"],
+["Triglycerides","Triglycerides","Biochemistry","الدهون الثلاثية","Serum","red","حسب المختبر"],
+["Cholesterol","Total Cholesterol","Biochemistry","الكوليسترول الكلي","Serum","red","حسب المختبر"],
+
+["WBC Count","White Blood Cell Count","Hematology","عدد كريات الدم البيضاء","EDTA","purple","لا يحتاج عادة"],
+["RBC Count","Red Blood Cell Count","Hematology","عدد كريات الدم الحمراء","EDTA","purple","لا يحتاج عادة"],
+["Hemoglobin","Hemoglobin","Hematology","الهيموغلوبين","EDTA","purple","لا يحتاج عادة"],
+["Hematocrit","Hematocrit","Hematology","الهيماتوكريت","EDTA","purple","لا يحتاج عادة"],
+["MCV","Mean Corpuscular Volume","Hematology","حجم الكرية الوسطي","EDTA","purple","لا يحتاج عادة"],
+["MCH","Mean Corpuscular Hemoglobin","Hematology","متوسط هيموغلوبين الكرية","EDTA","purple","لا يحتاج عادة"],
+["MCHC","Mean Corpuscular Hemoglobin Concentration","Hematology","تركيز هيموغلوبين الكرية","EDTA","purple","لا يحتاج عادة"],
+["RDW","Red Cell Distribution Width","Hematology","تفاوت حجم الكريات","EDTA","purple","لا يحتاج عادة"],
+["Platelet Count","Platelet Count","Hematology","عدد الصفائح","EDTA","purple","لا يحتاج عادة"],
+["ANC","Absolute Neutrophil Count","Hematology","العدد المطلق للعدلات","EDTA","purple","لا يحتاج عادة"],
+["Reticulocyte Hb","Reticulocyte Hemoglobin","Hematology","هيموغلوبين الخلايا الشبكية","EDTA","purple","لا يحتاج عادة"],
+
+["Copper","Copper","Trace Elements","النحاس","حسب النظام","red","حسب المختبر"],
+["Zinc","Zinc","Trace Elements","الزنك","حسب النظام","red","حسب المختبر"],
+["Lead","Lead","Toxicology","الرصاص","حسب النظام","purple","حسب المختبر"],
+["Acetaminophen","Acetaminophen Level","Toxicology","مستوى الباراسيتامول","Serum","red","حسب المختبر"],
+["Salicylate","Salicylate Level","Toxicology","مستوى الساليسيلات","Serum","red","حسب المختبر"],
+
+["PSA","Prostate Specific Antigen","Tumor Markers","مستضد البروستاتا","Serum","red","حسب المختبر"],
+["AFP","Alpha Fetoprotein","Tumor Markers","ألفا فيتو بروتين","Serum","red","حسب المختبر"],
+["CEA","Carcinoembryonic Antigen","Tumor Markers","CEA","Serum","red","حسب المختبر"],
+["CA-125","Cancer Antigen 125","Tumor Markers","CA-125","Serum","red","حسب المختبر"],
+["CA 19-9","Cancer Antigen 19-9","Tumor Markers","CA 19-9","Serum","red","حسب المختبر"],
+
+["Haptoglobin","Haptoglobin","Hematology","هابتوغلوبين","Serum","red","حسب المختبر"],
+["LDH","Lactate Dehydrogenase","Biochemistry","إنزيم LDH","Serum","red","حسب المختبر"],
+["Osmolality","Serum Osmolality","Biochemistry","أسمولالية المصل","Serum","red","حسب المختبر"],
+["Lactate","Lactate","Biochemistry","اللاكتات","حسب النظام","gray","حسب المختبر"],
+["Ammonia","Ammonia","Biochemistry","الأمونيا","حسب النظام","purple","نقل ومعالجة خاصة"]
+];
+
+// Generate test cards
+function renderTests(){
+const container=document.getElementById("testCards");
+container.innerHTML="";
+tests.forEach(t=>{
+const card=document.createElement("div");
+card.className="card test-card";
+card.dataset.search=t.join(" ").toLowerCase();
+card.innerHTML=`
+<span class="tag">${t[2]}</span>
+<h3>${t[0]} - ${t[1]}</h3>
+<p>${t[3]}</p>
+<p><b>Sample:</b> ${t[4]}</p>
+<p><b>Preparation:</b> ${t[6]}</p>
+<button class="secondary" onclick="showTestVideo('${t[0]}')">🎬 AI Video</button>
+<button class="primary" onclick="showTubeFor('${t[0]}')">🧪 Tube</button>
+`;
+container.appendChild(card);
+});
+}
+renderTests();
+
+function searchTests(){
+const q=document.getElementById("search").value.toLowerCase().trim();
+let found=0;
+document.querySelectorAll(".test-card").forEach(c=>{
+let match=c.dataset.search.includes(q);
+c.style.display=match?"block":"none";
+if(match)found++;
+});
+document.getElementById("noResults").classList.toggle("hidden",found>0);
+}
+
+const tubes={
+purple:{name:"Lavender / Purple",additive:"EDTA",sample:"Whole Blood",class:"tube-purple",tests:"CBC, HbA1c, Blood Film (EDTA)"},
+blue:{name:"Light Blue",additive:"Sodium Citrate",sample:"Citrated Plasma",class:"tube-blue",tests:"PT, INR, aPTT, D-Dimer"},
+green:{name:"Green",additive:"Heparin",sample:"Plasma",class:"tube-green",tests:"Selected chemistry tests حسب النظام"},
+red:{name:"Red",additive:"No anticoagulant / Clot activator حسب المنتج",sample:"Serum",class:"tube-red",tests:"Hormones, Chemistry, Serology"},
+yellow:{name:"Gold / Yellow SST",additive:"Clot activator + gel",sample:"Serum",class:"tube-yellow",tests:"Many chemistry and immunology tests"},
+gray:{name:"Gray",additive:"Fluoride/Oxalate أو تركيبة أخرى",sample:"Plasma",class:"tube-gray",tests:"Glucose وبعض اختبارات اللاكتات حسب النظام"},
+black:{name:"Black",additive:"Sodium Citrate",sample:"Whole Blood",class:"tube-black",tests:"ESR بطريقة Westergren حسب النظام"},
+orange:{name:"Orange",additive:"Thrombin",sample:"Serum",class:"tube-orange",tests:"Rapid serum tests حسب المنتج"}
+};
+
+function findTube(){
+const q=document.getElementById("tubeSearch").value.toLowerCase().trim();
+const t=tests.find(x=>x[0].toLowerCase()===q||x[1].toLowerCase()===q||x[3].toLowerCase().includes(q));
+if(!t){document.getElementById("tubeResult").innerHTML="لم يتم العثور على التحليل. جرب CBC أو PT أو TSH.";return;}
+showTubeFor(t[0]);
+}
+function showTubeFor(code){
+const t=tests.find(x=>x[0]===code);
+if(!t)return;
+const tube=tubes[t[5]];
+document.getElementById("tubeResult").innerHTML=`
+<h3>${t[0]} - ${t[1]}</h3>
+<div class="tube ${tube?tube.class:""}"></div>
+<p><b>Tube:</b> ${tube?tube.name:t[4]}</p>
+<p><b>Additive:</b> ${tube?tube.additive:"حسب نظام المختبر"}</p>
+<p><b>Sample:</b> ${tube?tube.sample:t[4]}</p>
+<p><b>ملاحظة:</b> يجب التأكد من متطلبات الاختبار المعتمدة في المختبر والشركة المصنعة.</p>
+`;
+document.getElementById("tubeResult").scrollIntoView({behavior:"smooth"});
+}
+function filterTube(){
+const color=document.getElementById("tubeColor").value;
+if(!color)return;
+const tube=tubes[color];
+document.getElementById("tubeResult").innerHTML=`
+<div class="tube ${tube.class}"></div>
+<h3>${tube.name}</h3>
+<p><b>Additive:</b> ${tube.additive}</p>
+<p><b>Sample:</b> ${tube.sample}</p>
+<p><b>Examples:</b> ${tube.tests}</p>
+<p>تأكد دائمًا من متطلبات الاختبار المعتمدة.</p>`;
+}
+
+function showTestVideo(code){
+const t=tests.find(x=>x[0]===code);
+if(!t)return;
+document.getElementById("videos").scrollIntoView({behavior:"smooth"});
+document.getElementById("videoCards").innerHTML=`
+<div class="card">
+<h3>🎬 ${t[0]} - AI Video Explanation</h3>
+<p>شرح التحليل: ${t[1]}</p>
+<p>العينة: ${t[4]}</p>
+<div class="video-box">
+<h3>AI Video Tutor</h3>
+<p>مكان الفيديو التعليمي الخاص بهذا التحليل.</p>
+<p>يمكن إضافة رابط فيديو YouTube أو فيديو مولد بالذكاء الاصطناعي هنا.</p>
+</div>
+<p>Topics: Principle • Sample • Procedure • Result • Errors</p>
+</div>`;
+}
+document.getElementById("videoCards").innerHTML=`
+<div class="card">
+<h3>AI Video Library</h3>
+<p>اختر التحليل من الموسوعة واضغط AI Video لعرض صفحة الفيديو الخاصة به.</p>
+</div>`;
+
+function showMode(mode){
+document.getElementById("students").classList.toggle("hidden",mode!=="students");
+document.getElementById("patients").classList.toggle("hidden",mode!=="patients");
+document.getElementById(mode).scrollIntoView({behavior:"smooth"});
+}
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+
+const questions=[
+{q:"ما الأنبوب المناسب لفحص CBC؟",o:["Blue","Purple EDTA","Gray"],a:1,e:"CBC يحتاج عادة دمًا كاملًا مع EDTA."},
+{q:"ما الأنبوب المستخدم عادة لفحص PT؟",o:["Light Blue","Purple","Red"],a:0,e:"يستخدم Sodium Citrate وفق متطلبات المختبر."},
+{q:"أي تحليل يعكس متوسط السكر خلال أشهر؟",o:["FBS","HbA1c","Random Glucose"],a:1,e:"HbA1c يعكس متوسط السكر خلال نحو 2–3 أشهر."},
+{q:"ما العينة الشائعة لتحليل Urinalysis؟",o:["Serum","Midstream Urine","EDTA"],a:1,e:"تستخدم عينة بول منتصف المجرى وفق التعليمات."}
+];
+let qi=0;
+function loadQuestion(){
+const q=questions[qi];
+document.getElementById("question").textContent=q.q;
+document.getElementById("options").innerHTML=q.o.map((o,i)=>
+`<button class="quiz-option" onclick="answer(${i})">${o}</button>`
+).join("");
+document.getElementById("quizResult").innerHTML="";
+}
+function answer(i){
+const q=questions[qi];
+document.getElementById("quizResult").innerHTML=
+`<div class="info">${i===q.a?"✅ إجابة صحيحة":"❌ إجابة غير صحيحة"}<br>${q.e}</div>`;
+}
+function nextQuestion(){qi=(qi+1)%questions.length;loadQuestion();}
+loadQuestion();
+
 function toggleLanguage(){
 lang=lang==="ar"?"en":"ar";
 document.documentElement.lang=lang;
 document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-
-document.querySelectorAll("[data-ar]").forEach(el=>{
-el.textContent=el.dataset[lang];
-});
-
-document.querySelectorAll("[data-placeholder-ar]").forEach(el=>{
-el.placeholder=el.dataset["placeholder-"+lang];
-});
-
 document.querySelector(".lang").textContent=lang==="ar"?"English":"العربية";
-document.getElementById("search").value="";
-searchTests();
+alert(lang==="en"?"The interface language switch is enabled.":"تم تغيير اللغة.");
 }
-
-function searchTests(){
-let q=document.getElementById("search").value.toLowerCase().trim();
-let cards=document.querySelectorAll("#testCards .card");
-let found=0;
-
-cards.forEach(card=>{
-let text=(card.innerText+" "+card.dataset.search).toLowerCase();
-let match=text.includes(q);
-card.style.display=match?"block":"none";
-if(match)found++;
-});
-
-document.getElementById("noResults").style.display=found?"none":"block";
-}
-
-document.getElementById("search").addEventListener("input",searchTests);
 </script>
-
 </body>
 </html>
